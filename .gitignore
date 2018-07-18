@@ -8,3 +8,5 @@ bower_components/
 report/
 build/
 .idea
+*.pem
+.vscode/
