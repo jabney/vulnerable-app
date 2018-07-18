@@ -1,7 +1,7 @@
 
 # Starter Project Fork
 
-This is a modified starter project for the Pluralsight course, *Getting Started with Node.js Security with Express and Angular*, updated to smooth out some difficulties I encountered while trying to get the original project up and running.
+This is a modified starter project for the Pluralsight course, *Getting Started with Node.js Security with Express and Angular*, updated to smooth out some difficulties I encountered while trying to get the original project up and running (node `v8.9.2`, 2018-July-18).
 
 This project contains three branches;
 - `master`: the unchanged, original project as it was forked from https://github.com/clarkio/vulnerable-app, except for `README.md`. The changes to this file are described below.
