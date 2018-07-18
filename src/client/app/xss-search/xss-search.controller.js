@@ -23,8 +23,12 @@
             dataservice.search(searchTerm)
                 .then(function(response) {
                     // Intentionally trusting as HTML for demonstration purposes
-                    console.log('Search response: ', response);
                     vm.searchResults = $sce.trustAsHtml(response);
+
+                    // Untrusted HTML (sanitized by angularjs).
+                    // vm.searchResults = response
+
+                    console.log('Search response: ', response);
                 })
                 .catch(function(error) {
                     logger.error(error);

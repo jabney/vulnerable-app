@@ -15,6 +15,10 @@
                             <hr>
                             <label>Result:</label>
                             <div>
+                                <!-- ng-bind will escape html -->
+                                <!-- <pre ng-bind="vm.searchResults"> -->
+
+                                <!-- ng-bind-html will not escape html -->
                                 <pre ng-bind-html="vm.searchResults">
                                 </pre>
                             </div>

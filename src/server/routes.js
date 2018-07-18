@@ -1,4 +1,6 @@
 var router = require('express').Router();
+var xssFilters = require('xss-filters')
+
 var four0four = require('./utils/404')();
 var data = require('./data');
 data.profile = {};
@@ -23,10 +25,11 @@ module.exports = router;
 function search(req, res, next) {
     // This would then query against a datastore for the search term
     // and return the results with the search term used for the query
+    console.log(req.query.searchTerm);
 
     // For demo purposes we're just going to send back the search term received
-    console.log(req.query.searchTerm);
-    res.status(200).send(req.query.searchTerm);
+    var escapedTerm = xssFilters.inHTMLData(req.query.searchTerm)
+    res.status(200).send(req.query.searchTerm /* escapedTerm */);
 }
 
 function getProfile(req, res, next) {
