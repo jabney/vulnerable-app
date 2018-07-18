@@ -6,16 +6,21 @@
     "init": "npm install",
     "install": "bower install",
     "start": "node src/server/app.js",
-    "test": "gulp test"
+    "test": "gulp test",
+    "serve-dev": "gulp serve-dev --nosync"
   },
   "dependencies": {
     "body-parser": "^1.8.2",
     "cookie-parser": "^1.4.1",
     "express": "^4.9.3",
+    "express-session": "^1.15.6",
+    "lusca": "^1.4.1",
     "morgan": "^1.1.1",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "xss-filters": "^1.2.7"
   },
   "devDependencies": {
+    "bower": "^1.8.4",
     "browser-sync": "^2.7.13",
     "chai": "^3.1.0",
     "chai-as-promised": "^5.1.0",
@@ -70,6 +75,7 @@
     "minimist": "^1.1.0",
     "mocha": "^2.2.5",
     "node-notifier": "^4.0.3",
+    "nodemon": "^1.18.2",
     "phantomjs-prebuilt": "^2.1.4",
     "plato": "^1.2.0",
     "q": "^1.0.1",
