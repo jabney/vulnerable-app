@@ -1,3 +1,35 @@
+
+# Starter Project Fork
+
+This is a modified starter project for the Pluralsight course, *Getting Started with Node.js Security with Express and Angular*, updated to smooth out some difficulties I encountered while trying to get the original project up and running.
+
+This project contains three branches;
+- `master`: the unchanged, original project as it was forked from https://github.com/clarkio/vulnerable-app, except for `README.md`. The changes to this file are described below.
+- `starter`: the changes I made to make running the project a bit easier.
+- `final`: the changes I made over the course of the lessons.
+
+You may wish to branch from `starter` to manage your changes separately.
+
+## Changes in the `starter` Branch
+
+- `.gitignore`: added exclusions for `*.pem` and `.vscode/`.
+- `.gulpfile.js`: changed line 433 from `var debugMode = '--debug';` to `var debugMode = '--inspect';` in both the vulnerable app and attacker app. I did this to prevent errors and hanging occuring on my installed version of node, `v8.9.2`. If you are running the project's recommended version of `v6.11.0`, you may need to revert this change.
+- `bower.json`: minor-version-locked the angular version in both the vulnerable app and the attacker app, e.g., from `^1.5.6` to `~1.5.6`. This fixed some errors I was getting in the console, caused by `npm` installing `1.7.x`.
+- `package.json`:
+  - Installed `bower` and `nodemon` as dev dependencies in both the vulnerable app and the attacker app.
+  - Added a `serve-dev` script to start the server with `gulp serve-dev --nosync` in both the vulnerable app and the attacker app.
+  - Added `express-sessions`, `lusca`, and `xss-filters` as regular dependencies in the vulnerable app with versions that worked for me over the course of the lessons.
+- `README.md`: added all the additions above and including the text **Original readme below**, below.
+
+## Usage
+
+After cloning the repo, checkout the `starter` branch and follow along with the instructor. (I preserved the `master` branch, as is, so that people using this fork could diff my changes with the original project source.) You can also branch from `starter` if you wish to manage further changes in your own separate branch.
+
+## Notes
+Some of the urls in template files needed to be changed in order for the samples to run properly, e.g., changing port 3000 to 8001. While watching the videos, keep an eye out for the urls used in `clickjacking-attack.html` and `csrf-attack.html` as they didn't work for me originally and needed port changes from 3000 to 8001. Your milage may vary.
+
+**Original readme below**
+
 # vulnerable-app & attacker-app
 There are two applications within this repository that were generated from the HotTowel Angular generator. The main one is the `vulnerable-app` which is found in the `/src` folder. This application was built intentionally built out with vulnerabilities to easily demonstrate how they are performed by an attacker. The secondary application is the `attacker-app` found in the `/attacker-app` folder and it was built out to assist in demonstrating an attacker's website that is exploiting the vulnerabilities in the `vulnerable-app`.
 
